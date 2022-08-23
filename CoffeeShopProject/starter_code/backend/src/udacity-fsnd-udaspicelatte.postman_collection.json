@@ -1,0 +1,797 @@
+{
+	"info": {
+		"_postman_id": "f77b7a3e-4f5b-4474-bdb0-c4814c2f201f",
+		"name": "udacity-fsnd-udaspicelatte",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22206609"
+	},
+	"item": [
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks-detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks-detail",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmQ5Mzc2YmI1ZTA2NTk1NzkyOGY2ZDkiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4NTg0MjU5LCJleHAiOjE2NTg2NzA2NTksImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.POqXCqLSSWGtizDkcrdeZqjYiwgHc9iEHUVP9VGzWj5JnXATI_0KgVugVNN5yzixD-Igb2hM3wP4yTyy2cYQsj-SdsXSwf3WFMPN6Q5WqHAwAXuBMXs-Bt-qMh4P22M8Dz0jbSXe7zbpqzeE2elpIaxEE3MF9FnduVzR8ZoH5Ddmv0XdMnhrlwd7eQxkSOAms_2LXo_1fkfKhXtnFMDCMjQs4gOr1uJ-nl5dmRuczGrlFwbesFX65uDC0F69KQz-E5xrnUrDYU3-ZadhUElutdBmCoa-qx4mNq_ksG68U5z3Kjh8O0qIGPI5cgi6hTZb_ZJWNyL2hGBYmta564yu_w",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "barista",
+			"item": [
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmQ5Mzc2YmI1ZTA2NTk1NzkyOGY2ZDkiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4Njg5OTk4LCJleHAiOjE2NTg3NzYzOTgsImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.WSdV1vlwAXZ6cVgbVdE-RRaJUtBSWBLBiFnq-h8H9vwzPkGPdCSfYk4aDAINxoLKEcA2ArnINnP0NywdK2PWw2A9mUxkoNARPpkAzT0xVWOThDoQusNGvICJq2oWJnR-rUIHP5Tl_7EhBt9SPilicz6g9j36g4I6TDNb207NzBzOCDTIUZs4Qnpc5MO33uvFATFFxH2CAs3vqERCHioOEJ-_QBXh9hMi3mLkF-5KHzMgtGhCiV1Y--wS9Lb0kX4qkoVnuhhc9x7gS2pEQUpTD05kVqngO2ReO8jQGXeT9hnvJm39qVwLky7rAej9BjynZerVaS8zVFjYxV7lDYhwvw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks-detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmQ5Mzc2YmI1ZTA2NTk1NzkyOGY2ZDkiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4Njg5OTk4LCJleHAiOjE2NTg3NzYzOTgsImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.WSdV1vlwAXZ6cVgbVdE-RRaJUtBSWBLBiFnq-h8H9vwzPkGPdCSfYk4aDAINxoLKEcA2ArnINnP0NywdK2PWw2A9mUxkoNARPpkAzT0xVWOThDoQusNGvICJq2oWJnR-rUIHP5Tl_7EhBt9SPilicz6g9j36g4I6TDNb207NzBzOCDTIUZs4Qnpc5MO33uvFATFFxH2CAs3vqERCHioOEJ-_QBXh9hMi3mLkF-5KHzMgtGhCiV1Y--wS9Lb0kX4qkoVnuhhc9x7gS2pEQUpTD05kVqngO2ReO8jQGXeT9hnvJm39qVwLky7rAej9BjynZerVaS8zVFjYxV7lDYhwvw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks-detail",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmQ5Mzc2YmI1ZTA2NTk1NzkyOGY2ZDkiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4Njg5OTk4LCJleHAiOjE2NTg3NzYzOTgsImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.WSdV1vlwAXZ6cVgbVdE-RRaJUtBSWBLBiFnq-h8H9vwzPkGPdCSfYk4aDAINxoLKEcA2ArnINnP0NywdK2PWw2A9mUxkoNARPpkAzT0xVWOThDoQusNGvICJq2oWJnR-rUIHP5Tl_7EhBt9SPilicz6g9j36g4I6TDNb207NzBzOCDTIUZs4Qnpc5MO33uvFATFFxH2CAs3vqERCHioOEJ-_QBXh9hMi3mLkF-5KHzMgtGhCiV1Y--wS9Lb0kX4qkoVnuhhc9x7gS2pEQUpTD05kVqngO2ReO8jQGXeT9hnvJm39qVwLky7rAej9BjynZerVaS8zVFjYxV7lDYhwvw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Water3\",\r\n    \"recipe\": {\r\n        \"name\": \"Water\",\r\n        \"color\": \"blue\",\r\n        \"parts\": 1\r\n    }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmQ5Mzc2YmI1ZTA2NTk1NzkyOGY2ZDkiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4Njg5OTk4LCJleHAiOjE2NTg3NzYzOTgsImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.WSdV1vlwAXZ6cVgbVdE-RRaJUtBSWBLBiFnq-h8H9vwzPkGPdCSfYk4aDAINxoLKEcA2ArnINnP0NywdK2PWw2A9mUxkoNARPpkAzT0xVWOThDoQusNGvICJq2oWJnR-rUIHP5Tl_7EhBt9SPilicz6g9j36g4I6TDNb207NzBzOCDTIUZs4Qnpc5MO33uvFATFFxH2CAs3vqERCHioOEJ-_QBXh9hMi3mLkF-5KHzMgtGhCiV1Y--wS9Lb0kX4qkoVnuhhc9x7gS2pEQUpTD05kVqngO2ReO8jQGXeT9hnvJm39qVwLky7rAej9BjynZerVaS8zVFjYxV7lDYhwvw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmQ5Mzc2YmI1ZTA2NTk1NzkyOGY2ZDkiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4Njg5OTk4LCJleHAiOjE2NTg3NzYzOTgsImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.WSdV1vlwAXZ6cVgbVdE-RRaJUtBSWBLBiFnq-h8H9vwzPkGPdCSfYk4aDAINxoLKEcA2ArnINnP0NywdK2PWw2A9mUxkoNARPpkAzT0xVWOThDoQusNGvICJq2oWJnR-rUIHP5Tl_7EhBt9SPilicz6g9j36g4I6TDNb207NzBzOCDTIUZs4Qnpc5MO33uvFATFFxH2CAs3vqERCHioOEJ-_QBXh9hMi3mLkF-5KHzMgtGhCiV1Y--wS9Lb0kX4qkoVnuhhc9x7gS2pEQUpTD05kVqngO2ReO8jQGXeT9hnvJm39qVwLky7rAej9BjynZerVaS8zVFjYxV7lDYhwvw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmQ5Mzc2YmI1ZTA2NTk1NzkyOGY2ZDkiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4Njg5OTk4LCJleHAiOjE2NTg3NzYzOTgsImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.WSdV1vlwAXZ6cVgbVdE-RRaJUtBSWBLBiFnq-h8H9vwzPkGPdCSfYk4aDAINxoLKEcA2ArnINnP0NywdK2PWw2A9mUxkoNARPpkAzT0xVWOThDoQusNGvICJq2oWJnR-rUIHP5Tl_7EhBt9SPilicz6g9j36g4I6TDNb207NzBzOCDTIUZs4Qnpc5MO33uvFATFFxH2CAs3vqERCHioOEJ-_QBXh9hMi3mLkF-5KHzMgtGhCiV1Y--wS9Lb0kX4qkoVnuhhc9x7gS2pEQUpTD05kVqngO2ReO8jQGXeT9hnvJm39qVwLky7rAej9BjynZerVaS8zVFjYxV7lDYhwvw\n",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "manager",
+			"item": [
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmMyZWZlODE0M2ZjOTM2NTI0Yjk3ZGEiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4NjkwMTA5LCJleHAiOjE2NTg3NzY1MDksImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.lo7sgmi999U8rsyTuS-58q2KFhOG59n-3fs3G1PWXRXJ6s4j-Ql8dcdCxHAQugDbfdNhv5J4JiiN6-hAppMHTbMc87wRqkbTL72FtWQ7yvbrGASf3ZtJldjJNWAO3k_Ys9OTn-zBmiQVuPFbDAWA3-4CcnBHuan0gSuhfjuaFndXMqQvRPiSC48xa2KJzzl3HBf6Xyz5iv3nvpjPz1EzsLJi0VxXegb3RVUJnIdrm5_7xZQ2che7oZObMTasLqTKizp8qJH2lRnv8YDFEvW28i-UI7bj-WolhLUqxt4VWwJvvW4hyT8ILihIA8oEq01fyb1L8B7NuwmGbfk9YEFQCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks-detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmMyZWZlODE0M2ZjOTM2NTI0Yjk3ZGEiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4NjkwMTA5LCJleHAiOjE2NTg3NzY1MDksImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.lo7sgmi999U8rsyTuS-58q2KFhOG59n-3fs3G1PWXRXJ6s4j-Ql8dcdCxHAQugDbfdNhv5J4JiiN6-hAppMHTbMc87wRqkbTL72FtWQ7yvbrGASf3ZtJldjJNWAO3k_Ys9OTn-zBmiQVuPFbDAWA3-4CcnBHuan0gSuhfjuaFndXMqQvRPiSC48xa2KJzzl3HBf6Xyz5iv3nvpjPz1EzsLJi0VxXegb3RVUJnIdrm5_7xZQ2che7oZObMTasLqTKizp8qJH2lRnv8YDFEvW28i-UI7bj-WolhLUqxt4VWwJvvW4hyT8ILihIA8oEq01fyb1L8B7NuwmGbfk9YEFQCw\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks-detail",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmMyZWZlODE0M2ZjOTM2NTI0Yjk3ZGEiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4NjkwMTA5LCJleHAiOjE2NTg3NzY1MDksImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.lo7sgmi999U8rsyTuS-58q2KFhOG59n-3fs3G1PWXRXJ6s4j-Ql8dcdCxHAQugDbfdNhv5J4JiiN6-hAppMHTbMc87wRqkbTL72FtWQ7yvbrGASf3ZtJldjJNWAO3k_Ys9OTn-zBmiQVuPFbDAWA3-4CcnBHuan0gSuhfjuaFndXMqQvRPiSC48xa2KJzzl3HBf6Xyz5iv3nvpjPz1EzsLJi0VxXegb3RVUJnIdrm5_7xZQ2che7oZObMTasLqTKizp8qJH2lRnv8YDFEvW28i-UI7bj-WolhLUqxt4VWwJvvW4hyT8ILihIA8oEq01fyb1L8B7NuwmGbfk9YEFQCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Water3\",\n    \"recipe\": {\n        \"name\": \"Water\",\n        \"color\": \"blue\",\n        \"parts\": 1\n    }\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmMyZWZlODE0M2ZjOTM2NTI0Yjk3ZGEiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4NjkwMTA5LCJleHAiOjE2NTg3NzY1MDksImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.lo7sgmi999U8rsyTuS-58q2KFhOG59n-3fs3G1PWXRXJ6s4j-Ql8dcdCxHAQugDbfdNhv5J4JiiN6-hAppMHTbMc87wRqkbTL72FtWQ7yvbrGASf3ZtJldjJNWAO3k_Ys9OTn-zBmiQVuPFbDAWA3-4CcnBHuan0gSuhfjuaFndXMqQvRPiSC48xa2KJzzl3HBf6Xyz5iv3nvpjPz1EzsLJi0VxXegb3RVUJnIdrm5_7xZQ2che7oZObMTasLqTKizp8qJH2lRnv8YDFEvW28i-UI7bj-WolhLUqxt4VWwJvvW4hyT8ILihIA8oEq01fyb1L8B7NuwmGbfk9YEFQCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Water5\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmMyZWZlODE0M2ZjOTM2NTI0Yjk3ZGEiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4NjkwMTA5LCJleHAiOjE2NTg3NzY1MDksImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.lo7sgmi999U8rsyTuS-58q2KFhOG59n-3fs3G1PWXRXJ6s4j-Ql8dcdCxHAQugDbfdNhv5J4JiiN6-hAppMHTbMc87wRqkbTL72FtWQ7yvbrGASf3ZtJldjJNWAO3k_Ys9OTn-zBmiQVuPFbDAWA3-4CcnBHuan0gSuhfjuaFndXMqQvRPiSC48xa2KJzzl3HBf6Xyz5iv3nvpjPz1EzsLJi0VxXegb3RVUJnIdrm5_7xZQ2che7oZObMTasLqTKizp8qJH2lRnv8YDFEvW28i-UI7bj-WolhLUqxt4VWwJvvW4hyT8ILihIA8oEq01fyb1L8B7NuwmGbfk9YEFQCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmMyZWZlODE0M2ZjOTM2NTI0Yjk3ZGEiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4NjkwMTA5LCJleHAiOjE2NTg3NzY1MDksImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.lo7sgmi999U8rsyTuS-58q2KFhOG59n-3fs3G1PWXRXJ6s4j-Ql8dcdCxHAQugDbfdNhv5J4JiiN6-hAppMHTbMc87wRqkbTL72FtWQ7yvbrGASf3ZtJldjJNWAO3k_Ys9OTn-zBmiQVuPFbDAWA3-4CcnBHuan0gSuhfjuaFndXMqQvRPiSC48xa2KJzzl3HBf6Xyz5iv3nvpjPz1EzsLJi0VxXegb3RVUJnIdrm5_7xZQ2che7oZObMTasLqTKizp8qJH2lRnv8YDFEvW28i-UI7bj-WolhLUqxt4VWwJvvW4hyT8ILihIA8oEq01fyb1L8B7NuwmGbfk9YEFQCw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVtTlVTR0w5bmdseFMzdm50RFB6TiJ9.eyJpc3MiOiJodHRwczovL2dhYmJ5LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmQ5Mzc2YmI1ZTA2NTk1NzkyOGY2ZDkiLCJhdWQiOiJzaXBwIiwiaWF0IjoxNjU4NTg0MjU5LCJleHAiOjE2NTg2NzA2NTksImF6cCI6Ik1EVFY3TUJDVUFXNHFEUmFFVkloUU1EZzViR0NjUG0yIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.POqXCqLSSWGtizDkcrdeZqjYiwgHc9iEHUVP9VGzWj5JnXATI_0KgVugVNN5yzixD-Igb2hM3wP4yTyy2cYQsj-SdsXSwf3WFMPN6Q5WqHAwAXuBMXs-Bt-qMh4P22M8Dz0jbSXe7zbpqzeE2elpIaxEE3MF9FnduVzR8ZoH5Ddmv0XdMnhrlwd7eQxkSOAms_2LXo_1fkfKhXtnFMDCMjQs4gOr1uJ-nl5dmRuczGrlFwbesFX65uDC0F69KQz-E5xrnUrDYU3-ZadhUElutdBmCoa-qx4mNq_ksG68U5z3Kjh8O0qIGPI5cgi6hTZb_ZJWNyL2hGBYmta564yu_w",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	]
+}
