@@ -1,8 +1,10 @@
 import json
-from flask import abort, request, _request_ctx_stack
+from flask import abort, request
 from functools import wraps
 from urllib.request import urlopen
-import jwt
+from jose import jwt
+#import jwt
+import sys
 
 
 
@@ -64,6 +66,12 @@ def get_token_auth_header():
             'code': 'invalid_header',
             'description': 'Authorization header must be bearer token.'
         }, 401)
+        
+    elif parts[0].lower() != 'bearer':
+        raise AuthError({
+            'code': 'Invalid Header',
+            'description': 'Authorization Header Must start with "Bearer". '
+        }, 401)
 
     token = parts[1]
     return token
@@ -80,17 +88,22 @@ def get_token_auth_header():
     it should raise an AuthError if the requested permission string is not in the payload permissions array
     return true otherwise
 '''
-def check_permissions(permission, payload):
-    # Check if permissions array in the JWT
-    if 'permissions' not in payload:
-        abort(400)
 
-    # Check if the user have permissions to accsses this rescuers
+def check_permissions(permission, payload):
+    if 'permissions' not in payload:
+        print("Permissions not in payload")
+        raise AuthError({
+            'code': 'invalid_claims',
+            'description': 'permissions not included in JWT'
+        }, 403)
+
     if permission not in payload['permissions']:
+        print(f'The passed permission <{permission}> is not in the payload')
         raise AuthError({
             'code': 'unauthorized',
-            'description': 'Permission Not found',
-        }, 401)
+            'description': 'Permission Not Found'
+        }, 403)
+
     return True
 
 '''
@@ -133,7 +146,7 @@ def verify_decode_jwt(token):
                 token,
                 rsa_key,
                 algorithms=ALGORITHMS,
-                audience='sipp',
+                audience=API_AUDIENCE,
                 issuer='https://' + AUTH0_DOMAIN + '/'
             )
 
@@ -145,7 +158,7 @@ def verify_decode_jwt(token):
                 'description': 'Token expired.'
             }, 401)
 
-        except jwt.PyJWKClientError:
+        except jwt.PyJWTError:
             raise AuthError({
                 'code': 'invalid_claims',
                 'description': 'Incorrect claims. Please, check the audience and issuer.'
@@ -176,10 +189,33 @@ def requires_auth(permission=''):
     def requires_auth_decorator(f):
         @wraps(f)
         def wrapper(*args, **kwargs):
-            token = get_token_auth_header()
-            payload = verify_decode_jwt(token)
+            jwt = get_token_auth_header()
+            #try:
+            payload = verify_decode_jwt(jwt)
             check_permissions(permission, payload)
-            return f(payload, *args, **kwargs)
-
+            # except Exception:
+            #     print('exception happened while -- Verify_decode_JWT')
+            #     print(sys.exc_info())
+            #     abort(401)
+            
+            #print(f'permission checked and the result is:  {res}')
+            # return f(payload,*args, **kwargs)
+            return f(*args, **kwargs)
         return wrapper
+
     return requires_auth_decorator
+
+
+# def requires_auth(permission=''):
+#     def requires_auth_decorator(f):
+#         @wraps(f)
+#         def wrapper(*args, **kwargs):
+#             tok = get_token_auth_header()
+#             payload = verify_decode_jwt(tok)
+#             res = check_permissions(permission, payload)
+#             print(f'Permission checked, result: {res}')
+#             return f(payload, *args, **kwargs)
+
+#         return wrapper
+
+#     return requires_auth_decorator
