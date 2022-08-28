@@ -190,32 +190,11 @@ def requires_auth(permission=''):
         @wraps(f)
         def wrapper(*args, **kwargs):
             jwt = get_token_auth_header()
-            #try:
             payload = verify_decode_jwt(jwt)
             check_permissions(permission, payload)
-            # except Exception:
-            #     print('exception happened while -- Verify_decode_JWT')
-            #     print(sys.exc_info())
-            #     abort(401)
-            
-            #print(f'permission checked and the result is:  {res}')
-            # return f(payload,*args, **kwargs)
             return f(*args, **kwargs)
         return wrapper
 
     return requires_auth_decorator
 
 
-# def requires_auth(permission=''):
-#     def requires_auth_decorator(f):
-#         @wraps(f)
-#         def wrapper(*args, **kwargs):
-#             tok = get_token_auth_header()
-#             payload = verify_decode_jwt(tok)
-#             res = check_permissions(permission, payload)
-#             print(f'Permission checked, result: {res}')
-#             return f(payload, *args, **kwargs)
-
-#         return wrapper
-
-#     return requires_auth_decorator
